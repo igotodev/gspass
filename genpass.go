@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-// func GetStrongPass returns as a string a password of random symbols,
+// func GetPass returns as a string a password of random symbols,
 // lowercase and uppercase letters with the length of (n int) and error,
 // max value for n is 32767
 func GetPass(n int) (string, error) {
