@@ -1,5 +1,5 @@
 // genpass - strong password package
-package genpass
+package gspass
 
 import (
 	"fmt"

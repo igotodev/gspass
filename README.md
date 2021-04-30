@@ -1,11 +1,11 @@
-# genpass
-
+# gspass 
+Strong Password Generator
 ## About
-Simple, easy-to-use package for strong passwords
+Simple, lightweight, easy-to-use package for creating strong passwords
 
 ## Simple install
 ```
-$ go get github.com/igotodev/genpass
+$ go get github.com/igotodev/gspass
 ```
 
 ## Example of usage
@@ -15,10 +15,10 @@ lowercase and uppercase letters of length `n` and `error`,
 the maximum value for `n` is 32767
 ```
 func main() {
-	x, err := genpass.GetPass(20) // max arg 32767
+	strPass, err := gspass.GetPass(20) // max arg 32767
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(x)
+	fmt.Println(strPass)
 }
 ```
