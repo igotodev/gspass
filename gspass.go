@@ -1,4 +1,4 @@
-// genpass - strong password package
+// gspass - strong password package
 package gspass
 
 import (
