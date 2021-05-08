@@ -29,7 +29,7 @@ func GetPass(n int) (string, error) {
 		case 2:
 			pass += letterLow()
 		case 3:
-			pass += simbol()
+			pass += symbol()
 		}
 	}
 	return pass, nil
@@ -66,7 +66,7 @@ func digt() string {
 	return num[x]
 }
 
-func simbol() string {
+func symbol() string {
 	sim := []string{"!", "@", "#", "$", "%", "&", "?"}
 	x := random(len(sim))
 	return sim[x]
