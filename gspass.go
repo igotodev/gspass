@@ -1,4 +1,4 @@
-// gspass - strong password package
+// gspass - strong password/token package
 package gspass
 
 import (
@@ -8,8 +8,9 @@ import (
 	"time"
 )
 
-// func GetPass returns as a string a password of random symbols,
-// lowercase and uppercase letters with the length of (n int) and error,
+// func GetPass returns as a string a password of random symbols
+// lowercase, uppercase letters, numbers and special characters
+// with the length of (n int) and error,
 // max value for n is 32767
 func GetPass(n int) (string, error) {
 	secNew := time.Now().UnixNano()
@@ -29,6 +30,31 @@ func GetPass(n int) (string, error) {
 			pass += letterLow()
 		case 3:
 			pass += simbol()
+		}
+	}
+	return pass, nil
+}
+
+// func GetPassDL returns as a string a password of random symbols
+// lowercase and uppercase letters and numbers WITHOUT special characters
+// with the length of (n int) and error,
+// max value for n is 32767
+func GetPassDL(n int) (string, error) {
+	secNew := time.Now().UnixNano()
+	rand.Seed(secNew)
+	pass := ""
+	if n > math.MaxInt16 {
+		return "", fmt.Errorf("error: number is so big")
+	}
+	for i := 0; i < n; i++ {
+		r := rand.Intn(3)
+		switch r {
+		case 0:
+			pass += letterUp()
+		case 1:
+			pass += digt()
+		case 2:
+			pass += letterLow()
 		}
 	}
 	return pass, nil
