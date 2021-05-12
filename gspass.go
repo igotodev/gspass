@@ -18,6 +18,8 @@ func GetPass(n int) (string, error) {
 	pass := ""
 	if n > math.MaxInt16 {
 		return "", fmt.Errorf("error: number is so big")
+	} else if n < 1 {
+		return "", fmt.Errorf("error: number is so small")
 	}
 	for i := 0; i < n; i++ {
 		r := rand.Intn(4)
@@ -45,6 +47,8 @@ func GetPassDL(n int) (string, error) {
 	pass := ""
 	if n > math.MaxInt16 {
 		return "", fmt.Errorf("error: number is so big")
+	} else if n < 1 {
+		return "", fmt.Errorf("error: number is so small")
 	}
 	for i := 0; i < n; i++ {
 		r := rand.Intn(3)
